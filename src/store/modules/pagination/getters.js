@@ -1,3 +1,3 @@
-export const getResults = state => {
-    return state.results;
+export function pagination(state) {
+    return state.pagination
 }

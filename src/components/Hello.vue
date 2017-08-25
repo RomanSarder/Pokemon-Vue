@@ -1,19 +1,17 @@
 <template>
-    
+    <div>
+        <h1>Hello here</h1>
+        <router-link :to="{name: 'Index'}">Index</router-link>
+    </div>
 </template>
 
 <script>
-import {rootPokemonActions} from "../resources";
-
 export default {
     data() {
-        return {
-            resource: undefined            
+        return {           
         }
-    },
-    created() {
-        
     }
+    
 }
 </script>
 

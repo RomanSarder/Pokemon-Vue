@@ -1,3 +1,1 @@
-export const state = {
-    
-}
+export default {pagination: {results: [], count: 0}}
