@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import pagination from "./modules/pagination";
+import display from "./modules/display";
+import types from "./modules/types";
 
 Vue.use(Vuex);
 
@@ -10,6 +11,7 @@ export default new Vuex.Store({
         loading: false
     },
     modules: {
-        pagination
+        display,
+        types
     }
 });

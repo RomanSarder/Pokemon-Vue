@@ -1,1 +1,0 @@
-export default {pagination: {results: [], count: 0}}

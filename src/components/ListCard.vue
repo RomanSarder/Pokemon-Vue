@@ -9,11 +9,14 @@
             :class="className" 
             @mouseover="hovered = true"
             @mouseleave="hovered = false">
+            <div class="card-header">
+                <img :src="require('../assets/dream-world/poke-ball.png')"/>
+            </div>
             <div class="card-img">
-                <img :src="require('../assets/official-artwork/' + (i+1) + '.png')"/>
+                <img :src="require('../assets/official-artwork/' + (index) + '.png')"/>
             </div>
             <div class="card-info">
-                <p>{{ item.name | capitalize }}</p>
+                <p>{{ pokemon.name | capitalize }}</p>
             </div>
         </div>
         </transition>
@@ -22,7 +25,7 @@
 
 <script>
     export default {
-        props: ['item', 'i'],
+        props: ['pokemon'],
         data() {
             return {
                 hovered: false
@@ -38,6 +41,9 @@
         computed: {
             className() {
                 return this.hovered ? "card animated bounce" : "card"
+            },
+            index() {
+                return this.pokemon.url.split("/")[6]
             }
         }
     }
@@ -45,7 +51,7 @@
 
 <style scoped lang="scss">
     .grid-card {
-        width: 20%;
+        width: 23%;
         display: flex;
         justify-content: center;
         margin: 10px;
@@ -55,15 +61,29 @@
             justify-content: center;
             flex-direction: column;
             cursor: pointer;
+            .card-img {
+                min-height: 200px;
+                min-width: 200px;
+                text-align: center;
+            }
             img {
-                max-width: 200px
+                max-width: 200px;
+                max-height: 200px;
             }
             .card-info {
-                background: #EEEEEE;
+                background: #C8F7C5;
                 p {
                     text-align: center;
                     font-size: 16px;
                     font-weight: bold;
+                }
+            }
+            .card-header {
+                text-align: center;
+                background: #C8F7C5;
+                padding: 5px;
+                img {
+                    width: 20px;
                 }
             }
         }
